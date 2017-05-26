@@ -12,6 +12,7 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	opacity: 0.25;
+	z-index: -1;
 } 
 
 .container {
@@ -23,11 +24,11 @@ body {
 	color: #fff;
 }
 
-h1 {
+.container h1 {
 	font-weight: normal;
 }
 
- input[type="submit"] {
+.container input[type="submit"] {
 	appearance: none;
 	background: none;
 	border: 1px solid #fff;
@@ -39,7 +40,8 @@ h1 {
 	text-transform: uppercase;
 }
 
- input[type="submit"]:hover, input[type="submit"]:focus {
+ .container input[type="submit"]:hover, 
+ .container input[type="submit"]:focus {
 	background: #fff;
 	color: #000;
 }  
