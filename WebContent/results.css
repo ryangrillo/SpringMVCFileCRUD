@@ -1,0 +1,45 @@
+body {
+	font-family: 'Helvetice Neue', Helvetica, Arial, sans-serif;
+}
+
+.celebrity-image {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-position: 50% 30%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 0.25;
+} 
+
+.container {
+	position: absolute;
+	left: 15%;
+	right: 15%;
+	bottom: 60px;
+	text-align:center;
+	color: #fff;
+}
+
+h1 {
+	font-weight: normal;
+}
+
+ input[type="submit"] {
+	appearance: none;
+	background: none;
+	border: 1px solid #fff;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff; 
+	padding: 1em;
+	border-radius: 6px;
+	text-transform: uppercase;
+}
+
+ input[type="submit"]:hover, input[type="submit"]:focus {
+	background: #fff;
+	color: #000;
+}  
