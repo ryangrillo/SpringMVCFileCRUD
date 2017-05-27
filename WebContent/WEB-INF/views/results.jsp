@@ -23,17 +23,37 @@
 			<form action="randomCeleb.do" method="GET">
 				<input type="submit" value="Get Another Quote">
 			</form>
+	<form action="removeCelebrity.do" method="POST">
+			<input type="hidden" name="id" value="${celebObject.id}">
+			<input type="hidden" name="name" value="${celebObject.name}">
+			<input type="hidden" name="jobTitle" value="${celebObject.jobTitle}">
+			<input type="submit" value="delete">
+		</form>
+		<form action="updateCelebrity.do" method="POST">
+			<input type="hidden" name="goToEdit" value="goToEdit">
+			<input type="hidden" name="id" value="${celebObject.id}">
+			<input type="hidden" name="name" value="${celebObject.name}">
+			<input type="hidden" name="jobTitle" value="${celebObject.jobTitle}">
+			<input type="hidden" name="image" value="${celebObject.image}">
+			<input type="hidden" name="quote" value="${celebObject.quote}">
+			<input type="submit" value="update">
+		</form>
 		</c:if>
 	</div>
 	<a href="index.html">Go Home</a>
 	<c:forEach var="celeb" items="${celebList}">
 	${celeb.name}
 	<form action="removeCelebrity.do" method="POST">
-			<input type="hidden" name="name" value="${celeb.name}"> <input
-				type="submit" value="delete">
+			<input type="hidden" name="id" value="${celeb.id}">
+			<input type="hidden" name="name" value="${celeb.name}">
+			<input type="hidden" name="jobTitle" value="${celeb.jobTitle}">
+			<input type="submit" value="delete">
 		</form>
 		<form action="updateCelebrity.do" method="POST">
-			<input type="hidden" name="celebName" value="${celeb.name}">
+			<input type="hidden" name="goToEdit" value="goToEdit">
+			<input type="hidden" name="id" value="${celeb.id}">
+			<input type="hidden" name="name" value="${celeb.name}">
+			<input type="hidden" name="jobTitle" value="${celeb.jobTitle}">
 			<input type="submit" value="update">
 		</form>
 	</c:forEach>

@@ -10,7 +10,6 @@
 </head>
 <body>
 <form action="updateCelebrity.do" method="POST">
-	<input type="hidden" name="oldName" value="${celeb.name}" />	
 	<input type="text" name="name" value="${celeb.name}" />	
 	<input type="text" name="jobTitle" value="${celeb.jobTitle}" />	
 	<input type="text" name="image" value="${celeb.image}" />	

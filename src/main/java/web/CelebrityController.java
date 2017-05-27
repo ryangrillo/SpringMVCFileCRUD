@@ -37,7 +37,7 @@ public class CelebrityController {
 	@RequestMapping(path="getAllCelebs.do", method = RequestMethod.GET)
 	public ModelAndView getAllCelebs() {
 		ModelAndView mv = new ModelAndView("WEB-INF/views/results.jsp");
-		List<Celebrity> list = dao.getCeleb();
+		List<Celebrity> list = dao.getAllCelebrities();
 		mv.addObject("celebList", list);
 		System.out.println(list);
 		return mv;
@@ -50,29 +50,30 @@ public class CelebrityController {
 		return mv;
 	}
 	@RequestMapping(path="removeCelebrity.do", method = RequestMethod.POST)
-	public ModelAndView RemoveCelebrity(@RequestParam("name") String n) {
+	public ModelAndView RemoveCelebrity(Celebrity c) {
 		ModelAndView mv = new ModelAndView("WEB-INF/views/results.jsp");
-		dao.removeCelebrity(n);
-		mv.addObject("celebList", dao.getCeleb());
+		dao.removeCelebrity(c);
+		dao.removeCelebrity(c);
+		mv.addObject("celebObject", c);
 		return mv;
 	}
 	
-	@RequestMapping(path = "updateCelebrity.do", params="celebName", method=RequestMethod.POST)
-	public ModelAndView sendToEditPage(@RequestParam("celebName") String n) {
+	@RequestMapping(path = "updateCelebrity.do", params="goToEdit", method=RequestMethod.POST)
+	public ModelAndView sendToEditPage(@RequestParam("goToEdit") String thingToDo, Celebrity celeb) {
 		ModelAndView mv = new ModelAndView("WEB-INF/views/edit.jsp");
-		mv.addObject("celeb", dao.getCelebrityByName(n));	
+		mv.addObject("celeb", celeb);	
 		return mv;
 	}
 	
-	@RequestMapping(path = "updateCelebrity.do", params="oldName", method=RequestMethod.POST)
-	public ModelAndView updateCelebrity(@RequestParam("oldName") String oldName, @RequestParam("name") String name, @RequestParam("jobTitle") String jobTitle, @RequestParam("image") String image, @RequestParam("quote") String quote) {
+	@RequestMapping(path = "updateCelebrity.do", method=RequestMethod.POST)
+	public ModelAndView updateCelebrity(Celebrity celeb) {
 		ModelAndView mv = new ModelAndView("WEB-INF/views/results.jsp");
-		Celebrity celeb = new Celebrity(name, jobTitle, image, quote);
-		mv.addObject("celebObject", dao.editCelebrity(oldName, celeb));
+		mv.addObject("celebObject", dao.editCelebrity(celeb));
 		return mv;
 	}
 	@RequestMapping(path="randomCeleb.do", method = RequestMethod.GET)
 	public ModelAndView getrandomCeleb() {
+		System.out.println("in random celeb");
 		ModelAndView mv = new ModelAndView("WEB-INF/views/results.jsp");
 		mv.addObject("celebObject", dao.randomCeleb());
 		mv.addObject("randColor", dao.randomColor());
@@ -84,8 +85,4 @@ public class CelebrityController {
 		mv.addObject("celebObject", dao.randomColor());
 		return mv;
 	}
-	
-	
-	
-	
 }
