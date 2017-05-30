@@ -26,8 +26,20 @@ body {
 .container h1 {
 	font-weight: normal;
 }
-
-.container input[type="submit"] {
+.startapp {
+	text-align: center;
+}
+.top-bar {
+	padding: 10px;
+}
+.top-bar form {
+	display: inline-block;
+}
+.top-bar form:last-child {
+	float: right;
+}
+.top-bar input[type="submit"],
+.top-bar select {
 	appearance: none;
 	background: none;
 	border: 1px solid #fff;
@@ -37,10 +49,20 @@ body {
 	padding: 1em;
 	border-radius: 6px;
 	text-transform: uppercase;
+	height: 44px;
 }
 
- .container input[type="submit"]:hover, 
- .container input[type="submit"]:focus {
+ .top-bar input[type="submit"]:hover, 
+ .top-bar input[type="submit"]:focus {
 	background: #fff;
 	color: #000;
 }  
+.top-bar-left {
+	margin-right: 10px;
+}
+.addForm {
+	text-align: center;
+	
+	margin-top: 10%;
+	margin-right: 10px;
+}

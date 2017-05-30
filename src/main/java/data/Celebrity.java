@@ -53,6 +53,7 @@ public class Celebrity {
 		return quote;
 	}
 	public void setQuote(String quote) {
+		System.err.println(quote);
 		this.quote = quote;
 	}
 	@Override

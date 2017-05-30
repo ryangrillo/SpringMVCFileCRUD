@@ -6,7 +6,7 @@
 	<display-name>CelebrityQuotes</display-name>
 	<welcome-file-list>
 		<!-- <welcome-file>/WEB-INF/views/results.jsp</welcome-file> -->
-		<welcome-file>randomCeleb.do</welcome-file>
+		<welcome-file>firstRandomCeleb.do</welcome-file>
 		
 	</welcome-file-list>
 	<servlet>
